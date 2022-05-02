@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import java.util.Arrays;
 
 import static java.util.stream.Collectors.filtering;
 import static java.util.stream.Collectors.reducing;
