@@ -1,2 +1,10 @@
 /target/
 /bin/
+/reports/
+.project
+/test-output/
+/screenshots/
+/.idea
+/.settings
+/.vscode
+/drivers
