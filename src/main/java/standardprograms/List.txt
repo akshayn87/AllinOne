@@ -1,0 +1,37 @@
+Standard Programs :
+1.Factorial
+2.FbonacciNumbers
+3.IntegerPalindrome
+4.IsPrimeNumber
+5.ReverseString
+6.SeperateNumbersfromString
+7.SortingBasedOnIncreasingLength
+8.StreamsAreasandVolumes
+9.StreamsEvenOddNumber
+10.StringPalindrome
+11.BinarySearchAlogorithm
+12.BreadthFirstSearch
+13.DepthFirstSearch
+14.MergeSort
+15.QuickSort
+16.Kruskals
+17.FloydWardshall
+18.Dijkstra's
+19.BellmanFordAlogorithm
+20.KadanesAlgorithm
+21.LeeAlgorithm
+22.FloodFillAlgorithm
+23.FloydsCycleDetection
+24.UnionFindAlogrithm
+25.TopologicalSort
+26.KPMAlgorithm
+27.InsertionSort
+28.SelectionSort
+29.CountingSort
+30.HeapSort
+31.KahnsTopologicalSort
+32.HuffmanCodingCompression
+33.Quickselect
+34.BoyerMooreMajorityVote
+35.BubbleSort
+Akshay Nikhare

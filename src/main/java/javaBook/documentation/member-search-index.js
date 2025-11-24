@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"javaBook.documentation","c":"BasicDocumentation","l":"AddNum(int, int)","u":"AddNum(int,int)"},{"p":"javaBook.documentation","c":"BasicDocumentation","l":"BasicDocumentation()","u":"%3Cinit%3E()"},{"p":"javaBook.documentation","c":"BasicDocumentation","l":"main(String[])","u":"main(java.lang.String[])"}];updateSearchResults();

@@ -1,0 +1,14 @@
+1.Create the Package Utils,PageObjects,PageEvents
+2.Utils - Config File
+3.Config File has BeforeTest,BeforeMethod,AfterMethod,AfterTest
+4.SetupDriver with System.property("") and File Location
+5.In Base Test method Define Webdriver,ExtentHtmlReporter,ExtentReports,Extenttest
+6.ExtentHtmlReporter to define formatting of the Extent report
+7.ExtentReports to bind the ExtentHtmlReporter
+8.Logic to Launch Browser
+9.In AfterTestMethod we define success and failure results
+10.SuiteListener implements ITestListener, IAnnotationTransformer
+11.OnFailure method we capture the screenshot and store as png with get ScreenshotAs
+12.In After Test extent.flush and driver.quit
+13.Define Login Page and LoginPageElements having methods and xpath,css path
+14.Alternatively we can use PageFactoty.initElements

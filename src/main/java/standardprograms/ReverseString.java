@@ -1,7 +1,7 @@
 package standardprograms;
 
 public class ReverseString {
-    public void reverseString() {
+    public static void reverseString() {
         String example1 = "Hello World at your DoorSteps", reverse = "";
         for (int unit = 0; unit < example1.length(); unit++) {
             char ch = example1.charAt(unit);
@@ -13,7 +13,7 @@ public class ReverseString {
     }
 
     //Swapping method
-    public void reverseStringwithSwapping() {
+    public static void reverseStringwithSwapping() {
         String example2 = "Hello World at your DoorSteps", reverse = "";
         char[] reversechar = example2.toCharArray();
         int start = 0, end = 0;
@@ -43,5 +43,22 @@ public class ReverseString {
         for (int i = try1.length - 1; i >= 0; i--)
             System.out.print(try1[i]);
     }
-
+    
+    public static void reverseByStringBuffer () {
+    	
+    	StringBuffer sb = new StringBuffer("11GeeksForGeeks11");
+    	
+    	sb =sb.reverse();
+    	
+    	System.out.println(sb);
+    	
+    	
+    }
+    public static void main(String[] args) {
+    	// TODO Auto-generated method stub
+    	reverseString() ;
+    	reverseStringwithSwapping();
+    	reverseByStringBuffer ();
+	}
+ 
 }

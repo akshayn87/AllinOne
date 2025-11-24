@@ -17,14 +17,16 @@ public class FileHandling {
         WriteFile();
         ReadFile();
         ReadFile2();
-        DeleteFile();
         ReadFile3();
         ReadingFileUsingInputStream();
         ReadingFileUsingBufferedReader();
         ReadFileUsingNio();
+        
         File file1 = new File("abc.txt");
         File file2 = new File("copyofabc.txt");
         CopyFile(file1, file2);
+        DeleteFile();
+        WriteFileUsingOutputStream();
         PrintFilesandFolders();
         FileWritingUsingScanner();
         ReadWriteExecutables();
@@ -54,7 +56,8 @@ public class FileHandling {
         }.getClass().getEnclosingMethod().getName();
         System.out.println("Current Method:-" + name);
         FileWriter fileWriter = new FileWriter("abc.txt");
-        fileWriter.write("This is the first Line\nThis is the second Line");
+        fileWriter.write("This is the first Line\nThis is the second Line.\nThis is the third Line");
+        fileWriter.flush();
         fileWriter.close();
     }
 
@@ -73,6 +76,7 @@ public class FileHandling {
             System.out.println(line);
         }
         sc.close();
+        System.out.format("File created %s at location %s using method %s", file.getName(),file.getAbsolutePath(),name);
         return line;
     }
 
@@ -83,13 +87,14 @@ public class FileHandling {
         String name = new Object() {
         }.getClass().getEnclosingMethod().getName();
         System.out.println("Current Method:-" + name);
-        FileReader fileReader = new FileReader("abc.txt");
-        int c = 0;
-        while ((c = fileReader.read()) != -1) {
-            System.out.print((char) c);
-        }
-        String line = String.valueOf((char) c);
-        return line;
+        try (FileReader fileReader = new FileReader("abc.txt")) {
+			int c = 0;
+			while ((c = fileReader.read()) != -1) {
+			    System.out.print((char) c);
+			}
+			String line = String.valueOf((char) c);
+			return line;
+		}
     }
 
     public static void DeleteFile() throws IOException {
@@ -143,6 +148,30 @@ public class FileHandling {
         fis.close();
     }
 
+    public static void WriteFileUsingOutputStream()	{
+    	String name = new Object() {
+        }.getClass().getEnclosingMethod().getName();
+        System.out.println("Current Method:-" + name);
+        String path = System.getProperty("user.dir") + "//abc.txt";
+        File file = new File(path);
+        try {
+			FileOutputStream fos = new FileOutputStream(file);
+			fos.write("This is the Line written by FileOutput Stream".getBytes());
+			fos.flush();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+    	
+    	System.out.format("Writing the File using method %s with name %s and location at %s having content length %d \n", name,file.getName(),file.getPath(),file.length());
+    	
+    	
+    }
     public static void ReadingFileUsingBufferedReader() throws IOException {
         /**
          * get current method name
@@ -215,17 +244,21 @@ public class FileHandling {
 
     public static void PrintFilesandFolders() {
         String path = "C:\\Users\\Akshay\\Downloads";
+        path ="C:"+File.separator+"Users"+File.separator+"Akshay"+File.separator+"Downloads";
         System.out.println("Folder under Scan :-" + path);
         File file = new File(path);
 
         File[] dir = file.listFiles();
         Arrays.sort(dir);
         for (File f : dir) {
+      
             if (f.isFile()) {
                 System.out.println("File :- " + f.getName());
             } else if (f.isDirectory()) {
                 System.out.println("Directory :- " + f.getName());
-            } else {
+            }  else if (f.isHidden()) {
+                System.out.println("Hidden :- " + f.getName());
+            }else {
                 System.out.println("Something elsse also present");
             }
         }
@@ -236,15 +269,32 @@ public class FileHandling {
         System.out.println("Enter the File name with Location Path");
 
         String fileName = sc.nextLine();
+        if(fileName.isEmpty()) {
+        	
+        	fileName ="abc.txt";
+        }
         FileOutputStream fos = new FileOutputStream(fileName, true);
 
         System.out.println("Enter the File Contents");
         String content = sc.nextLine();
+        if(content!= null) {
+        	sc.close();
+        }
         byte[] b = content.getBytes();
+        int length =b.length;
+        System.out.println(length);
+        if(length==0) {
         fos.write(b);
+        }else {
+        	fos.write("\n".getBytes());
+        	fos.write(b);
+        }
+        fos.flush();
         fos.close();
         sc.close();
         System.out.println("File is saved on Location Path");
+        System.out.format("The file with name %s is located at %s and having size %s",fileName,fos.getFD().toString(),b.length);
+        System.out.println("The file with name "+fileName+" is located at "+fos.getChannel()+" having size"+b.length);
     }
 
     public static void ReadWriteExecutables() {

@@ -26,10 +26,10 @@ public class StringPalindrome {
 
 
     public static void main(String args[]) {
-        System.out.println("Is aaa palindrom?: " + isPalindromString("aaa"));
-        System.out.println("Is abc palindrom?: " + isPalindromString("abc"));
-        System.out.println("Is bbbb palindrom?: " + isPalindromString("bbbb"));
-        System.out.println("Is defg palindrom?: " + isPalindromString("defg"));
+        System.out.println("Is aaa palindrome?: " + isPalindromString("aaa"));
+        System.out.println("Is abc palindrome?: " + isPalindromString("abc"));
+        System.out.println("Is bbbb palindrome?: " + isPalindromString("bbbb"));
+        System.out.println("Is defg palindrome?: " + isPalindromString("defg"));
 
 
     }

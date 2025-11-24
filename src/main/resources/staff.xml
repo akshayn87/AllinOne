@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<company>
+    <staff id="1001">
+        <name>Akshay</name>
+    </staff>
+    <staff id="1002">
+        <name>Rahul</name>
+    </staff>
+</company>
