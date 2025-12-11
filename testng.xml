@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+<suite name="CucumberTestNGSuite">
+        <test name="CucumberTests">
+            <classes>
+                <class name="runner.TestRunner" /> <!-- Full path to your TestRunner class -->
+                C:\Projects\AllinOne\src\test\java\runner\TestRunner.java
+            </classes>
+        </test>
+    </suite>

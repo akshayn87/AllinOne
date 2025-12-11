@@ -80,6 +80,16 @@ public class GenericLib {
 		}
 
 	}
+
+public static void navigateTo(WebDriver driver,String url){
+		try {
+		driver.navigate().to(url);	
+		logger.info("navigated to Url :- "+url);
+
+		} catch (Exception e) {
+			logger.info("Unable to Navigate to URL");
+		}
+	}
 	
 	public static boolean isClickable(WebDriver driver,WebElement element) {
 		try {

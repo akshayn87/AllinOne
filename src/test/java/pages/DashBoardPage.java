@@ -84,6 +84,7 @@ public class DashBoardPage {
 		
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public HashMap getOrangePageAttributes() {
 		logger.info("Get About Page Attributes");
 		
