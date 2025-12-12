@@ -29,7 +29,7 @@ public class ExtentReporter {
          test = report.createTest("Extent test");
     }  
     public static void main(String[] args) {
-        String path = System.getProperty("user.dir")+"\reports\screenshot.png";
+        String path = System.getProperty("user.dir")+"\\reports\\screenshot.png";
         System.out.println(path);
     }
     public static String captureScreenshot(WebDriver driver, String screenshotName) throws IOException {
@@ -67,8 +67,8 @@ public class ExtentReporter {
 
 
      public void EndTest(){
-       // report.getReport();
-        //report.getStats();
+       report.getReport();
+        report.getStats();
         report.flush();
     }
     

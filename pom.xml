@@ -28,7 +28,7 @@
 		<mavencompiler.version>3.13.0</mavencompiler.version>
 		<surefire.version>3.5.3</surefire.version>
 		<extentreports-testng-adapter>1.2.1</extentreports-testng-adapter>
-		<google.code.gson>2.9.0</google.code.gson>
+		<google.code.gson>2.13.2</google.code.gson>
 		<org.codehaus.plexus>4.0.2</org.codehaus.plexus>
 		<org.projectlombok>1.18.28</org.projectlombok>
 		<com.googlecode.json-simple>1.1.1</com.googlecode.json-simple>
@@ -41,9 +41,10 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${mavencompiler.version}</version>
 				<configuration>
-					<!-- <source>11</source> -->
-					<!-- <target>11</target> -->
-					<release>24</release>
+					<source>11</source>
+					<target>11</target>
+					<!-- <release>24</release> -->
+					
 				</configuration>
 			</plugin>
 			<plugin>
@@ -54,6 +55,7 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					
 				</configuration>
 			</plugin>
 		</plugins>
@@ -78,12 +80,6 @@
     	<artifactId>selenium-shutterbug</artifactId>
     	<version>1.5</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports-testng-adapter -->
-		<!-- <dependency>
-			<groupId>com.aventstack</groupId>
-			<artifactId>extentreports-testng-adapter</artifactId>
-			<version>${extentreports-testng-adapter}</version>
-		</dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -101,6 +97,12 @@
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
+			<exclusions>
+            <exclusion>
+                <groupId>com.aventstack</groupId>
+                <artifactId>extentreports</artifactId>
+            </exclusion>
+			</exclusions>
 			<version>${google.code.gson}</version>
 		</dependency>
 		<dependency>
@@ -160,6 +162,7 @@
 		<dependency>
 			<groupId>tech.grasshopper</groupId>
 			<artifactId>extent-pdf-report</artifactId>
+			
 			<version>${pdfreporter.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
